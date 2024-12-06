@@ -1,4 +1,9 @@
-FROM nginx:latest
-COPY index.html /usr/share/nginx/html/index.html
-COPY acerca.html /usr/share/nginx/html/acerca.html
-COPY style.css /usr/share/nginx/html/style.css
+version: '3'
+
+services:
+  practica-docker:
+    image: nginx
+    volumes:
+      - ./src:/usr/share/nginx/html
+    ports:
+      - "8080:80"
